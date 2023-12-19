@@ -6,6 +6,7 @@
 }
 
 html {
+    scroll-behavior: smooth;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -23,6 +24,27 @@ html {
     text-align: center !important;
 }
 
+.pull-right {
+    float: right !important;
+}
+
+.btn {
+    color: #fff;
+    background-color: #000;
+    text-decoration: none;
+    padding: 11px 16px;
+    display: inline-block;
+    margin-top: 18px;
+    border: none;
+}
+
+.btn:hover {
+    cursor: pointer;
+    color: #000;
+    background-color: #ccc;
+}
+
+
 .mt-8 {
     margin-top: 8px !important;
 }
@@ -34,6 +56,12 @@ html {
 .row {
     margin-left: -8px;
     margin-right: -8px;
+}
+
+.row::after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
 .col {
@@ -53,6 +81,8 @@ html {
 .col-third {
     width: 33.33333%;
 }
+
+/* end comom */
 
 /* main */
 #main {}
@@ -174,7 +204,7 @@ html {
 
 #content .content-section {
     width: 800px;
-    padding: 64px 0;
+    padding: 64px 0 112px;
     margin-left: auto;
     margin-right: auto;
 
@@ -254,7 +284,7 @@ html {
 
 .places-list {
     margin-top: 32px;
-    margin-bottom: 48px;
+    /* margin-bottom: 48px; */
 }
 
 .places-img {
@@ -287,35 +317,179 @@ html {
     line-height: 1.4;
 }
 
-.place-buy-btn {
-    color: #fff;
-    background-color: #000;
-    text-decoration: none;
-    padding: 11px 16px;
-    display: inline-block;
-    margin-top: 18px;
-}
-
-.place-buy-btn:hover {
-    color: #000;
-    background-color: #ccc;
-}
 
 /* contact content */
-.contac-content {
+.contact-content {
     margin-top: 48px;
 }
 
-.contac-info {
+.contact-info {
     font-size: 18px;
     line-height: 1.5;
 }
 
-.contac-info i[class*="fa-"] {
+.contact-info i[class*="fa-"] {
     width: 30px;
     display: inline-block;
 }
 
+.contact-form {
+    font-size: 15px;
+}
+
+.contact-form .form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+/* 
+.contact-form .form-submit-btn {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #000;
+    padding: 10px 16px;
+    float: right;
+} */
+
+.map-section img {
+    width: 100%;
+}
+
 /* footer setion */
 
-#footer {}
+#footer {
+    padding: 64px 16px;
+    text-align: center;
+}
+
+#footer .social-list {
+    font-size: 24px;
+}
+
+#footer .social-list a {
+    color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+}
+
+#footer .copyright a:hover,
+#footer .social-list a:hover {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+#footer .copyright {
+    margin-top: 15px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+#footer .copyright a {
+    margin-top: 15px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.4);
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.modal.open {
+    display: flex;
+}
+
+.modal-body {
+    padding: 16px;
+}
+
+.modal-container {
+    background: #fff;
+    width: 900px;
+    max-width: calc(100% - 32px);
+    min-height: 200px;
+    position: relative;
+    animation: modalFadeIn ease 0.6s;
+}
+
+.modal-header {
+    background-color: #009688;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 30px;
+}
+
+.modal-heading-icon {
+    margin-right: 16px;
+}
+
+.modal-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #fff;
+    padding: 12px;
+    cursor: pointer;
+    opacity: 0.7;
+
+}
+
+.modal-close:hover {
+    opacity: 1;
+}
+
+.modal-label {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.modal-input {
+    border: 1px solid #ccc;
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    margin-bottom: 24px;
+}
+
+#buy-tickets {
+    background: #009688;
+    border: none;
+    color: #fff;
+    width: 100%;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 18px;
+    cursor: pointer;
+}
+
+#buy-tickets:hover {
+    opacity: 0.7;
+}
+
+.modal-footer {
+    padding: 16px;
+    text-align: right;
+}
+
+.modal-footer a {
+    color: #2196f3;
+}
+
+@keyframes modalFadeIn{
+    from{
+        opacity: 0;
+        transform:translateY(-140px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
