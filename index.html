@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/fontawesome/css/all.min.css">
+
+    <link rel="stylesheet" href="./assets/css/./responsive.css">
     <title>The Band</title>
 
     <link rel="shortcut icon" href="./assets/img/snow.png" type="image/x-icon">
@@ -36,6 +38,9 @@
             <!-- begin: Search -->
             <div class="search-btn">
                 <i class="search-icon fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div id="mobile-menu" class="mobile-menu-btn">
+                <i class="menu-icon fa-solid fa-bars"></i>
             </div>
             <!-- end: Search -->
 
@@ -228,6 +233,34 @@
         </div>
     </div>
 
+    <!-- menu mobile -->
+    <script>
+        var header = document.getElementById('header');
+        var mobileMenu = document.getElementById('mobile-menu');
+        var headerHeight = header.clientHeight;
+
+        mobileMenu.onclick = function () {
+            var isClose = header.clientHeight === headerHeight;
+            if (isClose) {
+                header.style.height = 'auto';
+            } else {
+                header.style.height = null;
+            }
+        }
+
+        // tự động đóng menu khi chọn menu
+        var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+        for(var i=0; i<menuItems.length; i++){
+            var menuItem = menuItems[i];
+
+            menuItem.onclick = function(){
+                header.style.height = null;
+            }
+        }
+    </script>
+
+
+    <!-- module Mua ve ticket -->
     <script>
         const buyBtns = document.querySelectorAll('.js-buy-ticket')
         const modal = document.querySelector('.js-modal')
