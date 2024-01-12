@@ -53,6 +53,11 @@ html {
     margin-top: 16px !important;
 }
 
+
+.mt-32 {
+    margin-top: 32px !important;
+}
+
 .row {
     margin-left: -8px;
     margin-right: -8px;
@@ -95,7 +100,6 @@ html {
     height: 46px;
     background-color: #000;
     z-index: 1;
-    overflow: hidden;
 }
 
 #nav {
@@ -168,10 +172,16 @@ html {
     background-color: #ccc;
 }
 
-#header .mobile-menu-btn:hover .menu-icon{
+#header .mobile-menu-btn:hover .menu-icon {
     color: #000;
 }
 
+#header .mobile-menu-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
 
 #header .mobile-menu-btn,
 #header .search-btn {
@@ -247,7 +257,7 @@ html {
 }
 
 #content .member-list {
-    margin-top: 48px;
+    margin-top: 32px;
 }
 
 #content .member-name {
@@ -298,7 +308,7 @@ html {
 }
 
 .places-list {
-    margin-top: 32px;
+    margin-top: 16px;
     /* margin-bottom: 48px; */
 }
 
@@ -346,6 +356,15 @@ html {
 .contact-info i[class*="fa-"] {
     width: 30px;
     display: inline-block;
+}
+
+.contact-info a{
+    color: #101aef;
+    opacity: 0.8;
+}
+
+.contact-info a:hover{
+    opacity: 1;
 }
 
 .contact-form {
